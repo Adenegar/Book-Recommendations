@@ -111,7 +111,7 @@ if __name__ == "__main__":
     # Define a custom style for the completions menu (adjust colors as desired)
     custom_style = Style.from_dict({
         'completion-menu.completion': 'bg:#ffffff #000000',          # background: dark gray, text: white
-        'completion-menu.completion.current': 'bg:#00ff45 #ffffff',  # background for the selected item: green, text: white
+        'completion-menu.completion.current': 'bg:#00ff45 #dedede',  # background for the selected item: green, text: white
     })
 
     # Build a list of clean titles (keys in your dictionary)
