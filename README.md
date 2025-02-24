@@ -15,8 +15,7 @@ pip install pandas scikit-learn prompt_toolkit tqdm
 2. Prepare Your Data:
 Place your book data (e.g., books_data.csv) and user ratings CSV (e.g., Books_rating.csv) in the appropriate folder. I used books/[DATAFILE] from the project's root directory.
 
-3. Use the notebook and/or
-From the terminal, run the main script or open and use the Jupyter notebook:
+3. From here open and use the Jupyter notebook or from the terminal run the main script
 
 
 Use the python script (from the src folder)
