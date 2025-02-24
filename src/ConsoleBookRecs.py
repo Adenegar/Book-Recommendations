@@ -99,8 +99,6 @@ if __name__ == "__main__":
         if cleaned_title not in clean_title_to_index:
             clean_title_to_index[cleaned_title] = idx
 
-    clean_title_to_index['the great gatsby']
-
     # Construct the TF-IDF matrix (X) from the combined features column
     print("4/5")
     vectorizer = TfidfVectorizer(stop_words='english')
@@ -108,13 +106,21 @@ if __name__ == "__main__":
 
     print("5/5")
 
+    from prompt_toolkit.styles import Style
+
+    # Define a custom style for the completions menu (adjust colors as desired)
+    custom_style = Style.from_dict({
+        'completion-menu.completion': 'bg:#ffffff #000000',          # background: dark gray, text: white
+        'completion-menu.completion.current': 'bg:#00ff45 #ffffff',  # background for the selected item: green, text: white
+    })
+
     # Build a list of clean titles (keys in your dictionary)
     book_titles = list(clean_title_to_index.keys())
     book_completer = WordCompleter(book_titles, ignore_case=True, sentence=True)
 
     while True:
         # The prompt now shows autofill suggestions as you type.
-        ref_title = prompt("Enter a book title: ", completer=book_completer)
+        ref_title = prompt("Enter a book title: ", completer=book_completer, style=custom_style)
         ref_title = ref_title.strip().lower()
         if ref_title in clean_title_to_index:
             ref_idx = clean_title_to_index[ref_title]
